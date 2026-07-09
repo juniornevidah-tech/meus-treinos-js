@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carrinho de compra completo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">LOJA DE TECNOLOGIA</h1>
+    <div class="Buscar">
+    <input type="text" id="pesquise" placeholder="procura" onkeyup="Buscar()">
+    <button onclick="Buscar()">Pesquisa</button>
+    </div>
+    <hr>
+    <div id="produtos0">
+        <div class="produtos" data-categoria="perifericos">
+        <h1>Mouse g1</h1>
+        <h2>Descriçao</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quas quia tempora, temporibus commodi aspernatur soluta similique ducimus dicta quam voluptatum corrupti amet ipsum dolores quidem ullam id dolore neque.</p>
+        <h2>Valor: 400$</h2>
+        <button onclick="adicionar(1)">Adicionar</button>
+        </div>
+        <div class="produtos" data-categoria="perifericos">
+            <h1>Teclado GhostOne</h1>
+            <h2>descriçao</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis culpa facilis deleniti veniam ea possimus, delectus consequuntur corrupti est dolor ad iure autem modi temporibus soluta hic, at voluptatum? Sequi.</p>
+            <h2>Valor: 300R$</h2>
+            <button onclick="adicionar(2)">Adicionar</button>
+        </div>
+            <div class="produtos" data-categoria="monitores">
+                <h1>Monitor 160Hz</h1>
+                <h2>Descriçao do Produto</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero et animi numquam ex laborum voluptas at, maiores dolore optio eaque distinctio amet sit, molestiae maxime reiciendis eius officiis reprehenderit explicabo.</p>
+                <h2>Valor: 1000R$</h2>
+                <button onclick="adicionar(3)">Adicionar</button>
+            </div>
+        </div>
+                <div class="produtos" data-categoria="componentes">
+                    <h1>Placa de video</h1>
+                    <h2>Descriçao do Produto</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil eaque, quisquam magni nulla, ullam, eveniet totam odit natus soluta repellendus minima excepturi quaerat temporibus asperiores quasi porro cumque odio eos!</p>
+                    <h2>Valor: 3000R$</h2>
+                    <button onclick="adicionar(4)">Adicionar</button>
+                </div>
+            </div>
+            <div class="botao1">
+                <button id="carrinho5">🛒</button>
+            <div class="escondido">
+            <div class="carrinho1">
+                <h2>Seu carrinho</h2>
+                <ul id="LDC">
+                    
+                </ul>
+                <h2 id="Quantidade"></h2>
+                <h2 style="color: black;" id="Valor"></h2>
+            </div>
+            </div>
+            </div>
+            <div class="cartegoria">
+                <h2>Cartegorias abaixo</h2>
+                <button onclick="filtraCategoria('perifericos')">perifericos</button>
+                <button onclick="filtraCategoria('monitores')">monitores</button>
+                <button onclick="filtraCategoria('componentes')">componentes</button>
+                <button onclick="filtraCategoria('todos')">Todos</button>
+            </div>
+            
+</body>
+<script src="projetodocarrinho.js"></script>
+</html>

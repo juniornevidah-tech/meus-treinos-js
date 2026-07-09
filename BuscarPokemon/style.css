@@ -1,0 +1,299 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:30px;
+    flex-wrap:wrap;
+    padding:40px;
+
+    background:
+    radial-gradient(circle at center,#303030,#0f0f0f);
+
+    color:white;
+    overflow-x:hidden;
+}
+
+/* POKEBOLAS NO FUNDO */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(circle,#ffffff15 2px,transparent 2px);
+
+    background-size:60px 60px;
+
+    animation:fundo 20s linear infinite;
+
+    pointer-events:none;
+}
+
+@keyframes fundo{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(60px);
+    }
+}
+
+/* POKEDEX */
+
+.Informaçoes{
+    width:450px;
+
+    background:#dc0a2d;
+
+    border:6px solid #96001c;
+
+    border-radius:30px;
+
+    padding:30px;
+
+    position:relative;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.5),
+    inset 0 0 20px rgba(255,255,255,.2);
+}
+
+/* LUZ AZUL */
+
+.Informaçoes::before{
+    content:"";
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    background:#47d7ff;
+
+    box-shadow:
+    0 0 20px #47d7ff,
+    0 0 50px #47d7ff,
+    0 0 90px #47d7ff;
+}
+
+/* TITULO */
+
+.Informaçoes h1{
+    text-align:center;
+
+    color:#ffde00;
+
+    font-size:2.6rem;
+
+    margin-bottom:30px;
+
+    text-shadow:
+    3px 3px #3b4cca,
+    0 0 15px #ffde00;
+}
+
+/* INPUT */
+
+.Informaçoes input{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#7fff7f;
+
+    color:#000;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    outline:none;
+}
+
+/* BOTOES */
+
+.Informaçoes button{
+    width:100%;
+
+    margin-top:10px;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#3b4cca;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.Informaçoes button:hover{
+    background:#ffde00;
+
+    color:black;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 20px #ffde00;
+}
+
+/* TELA */
+
+.resultado{
+    width:450px;
+
+    background:#1f1f1f;
+
+    border:6px solid #444;
+
+    border-radius:30px;
+
+    padding:25px;
+
+    box-shadow:
+    inset 0 0 30px rgba(0,255,0,.15),
+    0 15px 40px rgba(0,0,0,.5);
+
+    text-align:center;
+}
+
+/* IMAGEM */
+
+#imagem img{
+    width:250px;
+
+    max-width:100%;
+
+    filter:
+    drop-shadow(0 0 25px #ffde00);
+
+    animation:flutuar 3s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/* NOME */
+
+#nome{
+    font-size:2rem;
+
+    color:#ffde00;
+
+    font-weight:bold;
+
+    margin:15px 0;
+
+    text-transform:uppercase;
+
+    text-shadow:
+    2px 2px #3b4cca;
+}
+
+/* DADOS */
+
+.resultado p{
+    margin:10px 0;
+
+    padding:12px;
+
+    background:#2c2c2c;
+
+    border-left:5px solid #ffde00;
+
+    border-radius:10px;
+
+    transition:.3s;
+}
+
+.resultado p:hover{
+    transform:translateX(8px);
+
+    border-left-color:#3b4cca;
+}
+
+/* FAVORITOS */
+
+.resultado ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.resultado ul li{
+    margin:10px 0;
+}
+
+.resultado ul li button{
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#dc0a2d;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.resultado ul li button:hover{
+    background:#ffde00;
+
+    color:black;
+
+    transform:scale(1.03);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:1000px){
+
+    body{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .Informaçoes,
+    .resultado{
+        width:95%;
+    }
+}

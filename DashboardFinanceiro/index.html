@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Informaçoes">
+        <h1>DashBoard Financeiro</h1>
+        <h2>Aqui voce pode resolver seus problemas financeiro</h2>
+        <hr>
+        Descriçao: <input type="text" id="Descriçao">
+        Valor: <input type="number" id="Valor">
+        <select name="tipo" id="entradaoudespesa">
+            <option value="Receita">Receita</option>
+            <option value="Despesa">Despesa</option>
+        </select>
+
+        <select name="categoria" id="Categoria">
+            <option value="comida">Comida</option>
+            <option value="transporte">transporte</option>
+            <option value="lazer">lazer</option>
+            <option value="trabalho">trabalho</option>
+            <option value="contas">contas</option>
+        </select>
+        <button onclick="remover()">Excluir</button>
+        <button onclick="AdicionandoTransacao()">Adicionar</button>
+    </div>
+    <div id="DashBoard23">
+        <ul id="resultado">
+
+        </ul>
+    </div>
+    <div id="resumo">
+        <p id="Despesas"></p>
+        <p id="Receitas"></p>
+        <p id="Saldo"></p>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!--Logo-->
+            <h1>
+                <a href="index.html">Pear</a>
+            </h1>
+            <!--Navegar pela funçoes-->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                </ul>
+            </nav>
+            <!--Form aonde ficar input e botao de pesquisar-->
+            <form class="pesquisar">
+                <label for="produto">Produto</label>
+                <input type="text" id="produto">
+                <button type="submit">Buscar</button>
+            </form>
+            <!--Area Do Usuario-->
+            <div class="area-do-usuario">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="favoritos.html">Favoritos(<span id="contador-favoritos">0</span>)</a></li>
+                    <li><a href="carrinho.html">🛒(<span id="contador-carrinho">0</span>)</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div id="lista-favoritos"></div>
+
+<script type="module" src="JS/modules/favoritos.js"></script>
+<script type="module" src="JS/modules/carrinho.js"></script>
+<script type="module" src="JS/modules/produtos.js"></script>
+
+</body>
+</html>

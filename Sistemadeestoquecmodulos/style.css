@@ -1,0 +1,170 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: #f4f7fc;
+    min-height:100vh;
+    padding:30px;
+    color:#333;
+}
+
+/* Cabeçalho */
+#informacoes{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+#informacoes h1{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+#informacoes h2{
+    color:#64748b;
+    margin-bottom:25px;
+    font-size:18px;
+    font-weight:500;
+}
+
+/* Inputs */
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:8px;
+    margin-bottom:15px;
+    border:2px solid #dbeafe;
+    border-radius:10px;
+    outline:none;
+    transition:.3s;
+    font-size:15px;
+}
+
+input:focus,
+select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+}
+
+/* Botões */
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* Pesquisa */
+#Pesquisa2{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+    display:flex;
+    gap:10px;
+}
+
+#Buscar{
+    flex:1;
+    margin:0;
+}
+
+/* Lista */
+#AreaDeExibiçao{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+#ListaDeProdutos{
+    list-style:none;
+}
+
+#ListaDeProdutos li{
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+    color:white;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:12px;
+    font-weight:500;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:.3s;
+}
+
+#ListaDeProdutos li:hover{
+    transform:translateX(5px);
+}
+
+/* Resultado */
+#ResultadoDosProdutos{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+#ResultadoDosProdutos p{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+#TotalDeProdutos{
+    border-left:6px solid #22c55e;
+}
+
+#ValorTotalDeEstoque{
+    border-left:6px solid #f59e0b;
+}
+
+/* Responsivo */
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    #Pesquisa2{
+        flex-direction:column;
+    }
+
+    #ResultadoDosProdutos{
+        grid-template-columns:1fr;
+    }
+
+    #ListaDeProdutos li{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:5px;
+    }
+}

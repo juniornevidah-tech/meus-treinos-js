@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="interface">
+        <h1>Loja virtual</h1>
+        <hr>
+    </div>
+    <div class="todos">
+    <div class="produto1">
+        <h1 id="res">Bmw M4 Competition</h1>
+        <img src="imagens/bmw-m4-coupe-2025-005-20240131183104-1280x925.jpg" width="300" alt="fotodoproduto">
+        <h2>Descriçao: O BMW M4 Competition é um cupê esportivo de alto desempenho que eleva a agressividade e a potência da divisão "M" (Motorsport) da BMW. Ele é amplamente reconhecido por combinar um design extremamente marcante, dinâmica de pista e um motor a combustão de alto rendimento.</h2>
+        <h2>Valor: 900.000,00</h2>
+        <button onclick="Comprar()">Adicionar</button>
+    </div>
+    <div class="produto2">
+        <h1>Porsche 911</h1>
+        <img src="imagens/2023-porsche-911-carrera-t-in-gulf-blue.jpg" width="300" alt="foto da poscher">
+        <h2>Descriçao: O Porsche 911 é um dos carros esportivos mais icônicos do mundo, fabricado desde 1963. Conhecido pelo seu clássico motor boxer traseiro, a linha atualmente se destaca por tecnologias avançadas, como o sistema híbrido T-Hybrid e versões de alto desempenho que chegam a acelerar de 0 a 100 km/h em 2,5 segundos.</h2>
+        <h2>Valor: 1.000.000,00</h2>
+        <button onclick="Comprar1()">Adicionar</button>
+    </div>
+    <div class="produto3">
+        <h1>Ferrari purosangue</h1>
+        <img src="imagens/1663674828_ferrari_purosangue_suv_uvod-32532628.jpg" width="300" alt="purosangue">
+        <h2>Descriçao:  Ferrari Purosangue é o primeiro veículo de quatro portas e quatro lugares na história da marca. Evitando o termo SUV, a Ferrari a classifica como um Ferrari Utility Vehicle (FUV). Ela combina a esportividade de um autêntico superesportivo com a versatilidade, espaço e conforto para o uso diário.</h2>
+        <h2>Valor: 6.838.500</h2>
+        <button onclick="Comprar2()">Adicionar</button>
+    </div>
+    <div class="icon">
+        <button id="botao">🛒 (0)</button>
+    <div class="escondido">
+    <div class="carrinho">
+        <h2>Seu carrinho</h2>
+        <hr>
+        <ul id="lista">
+            <li></li>
+        </ul>
+        <h2 id="total"></h2>
+        <h2 id="compra"></h2>
+        <button id="finaliza">Finaliza compra</button>
+    </div>
+    </div>
+    </div>
+</body>
+<script src="projeto1.js"></script>
+</html>

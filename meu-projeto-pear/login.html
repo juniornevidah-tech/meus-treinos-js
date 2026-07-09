@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso - Pear</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Pear</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                </ul>
+            </nav>
+            <div class="area-do-usuario">
+                <ul>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="favoritos.html">Favoritos(<span id="contador-favoritos">0</span>)</a></li>
+                <li><a href="carrinho.html">🛒(<span id="contador-carrinho">0</span>)</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container-autenticacao">
+        <div class="caixa-autenticacao">
+            <div class="bloco-form" id="bloco-login">
+                <h2>Iniciar sessao</h2>
+                <p class="subtitulo-auth">Insira suas credencias da Pear.</p>
+                <form id="form-login">
+                    <div class="campo-input">
+                        <label for="login-email">E-mail</label>
+                        <input type="email" id="login-email" required placeholder="nome@exemplo.com">
+                    </div>
+                    <div class="campo-input">
+                        <label for="login-senha">Senha</label>
+                        <input type="password" id="login-senha" required placeholder="Sua senha">
+                    </div>
+                    <button type="submit" class="btn-auth">Continuar</button>
+                </form>
+            </div>
+            <div class="divisor-auth"></div>
+
+            <div class="bloco-form" id="bloco-cadastro">
+                <h2>Criar ID Pear</h2>
+                <p class="subtitulo-auth">Sua conta para gerenciar compras e favoritos.</p>
+                <form id="form-cadastro">
+                    <div class="campo-input">
+                    <label for="cad-nome">Nome Completo</label>
+                    <input type="text" id="cad-nome" required placeholder="Seu nome">
+                    </div>
+                    <div class="campo-input">
+                        <label for="cad-email">E-mail</label>
+                        <input type="email" id="cad-email" required placeholder="nome@exemplo.com">
+                    </div>
+                    <div class="campo-input">
+                        <label for="cad-senha">Senha</label>
+                        <input type="password" id="cad-senha" required placeholder="minimo 6 caracteres">
+                    </div>
+                    <button type="submit" class="btn-auth btn-secundario">Criar Conta</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="JS/modules/login.js"></script>
+</body>
+</html>

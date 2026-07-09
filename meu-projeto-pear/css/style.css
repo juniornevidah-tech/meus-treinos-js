@@ -1,0 +1,757 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    /* CORRIGIDO: 'Segoe UI' é a pilha padrão do Windows, não da Apple.
+       -apple-system/BlinkMacSystemFont carregam a fonte nativa do sistema
+       em Mac/iOS; sem isso, nenhuma outra mudança visual chega perto do
+       resultado que você pediu. */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    background-color: var(--cor-fundo);
+    padding: 20px 0;
+    /* Sombra reduzida — a original (0 2px 10px rgba(0,0,0,0.08)) já estava
+       na faixa certa, mantive. Apple usa quase nada de sombra em headers. */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+/* NOVO: classe própria para a section de produtos, que estava usando
+   .container (feita pro header) e por isso jogava h2 e #lista-produtos
+   lado a lado em flex, um empurrado pra esquerda e outro pra direita.
+   Era o bug visível nos seus prints. */
+.secao-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1 a {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cor-destaque);
+    /* REMOVIDO: transform: scale(1.05) no link de texto.
+       Apple não escala texto de navegação no hover, só troca a cor
+       (ou sublinha). Escalar texto em flex quebra o alinhamento dos
+       itens ao lado por um instante — é ruído visual, não polish. */
+}
+
+.pesquisar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pesquisar label {
+    /* Apple não deixa label de busca visível ao lado do campo.
+       Se quiser manter acessibilidade sem mostrar o texto: */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+.pesquisar input {
+    width: 200px;
+    padding: 8px 14px;
+    border: 1px solid #D2D2D7;
+    border-radius: 980px; /* pill shape — assinatura visual da Apple em inputs/botões */
+    outline: none;
+    font-size: 14px;
+    background-color: var(--cor-fundo-alt);
+    transition: border-color 0.2s ease;
+}
+
+.pesquisar input:focus {
+    border-color: var(--cor-destaque);
+    background-color: var(--cor-fundo);
+}
+
+.pesquisar button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 980px;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pesquisar button:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+.area-do-usuario ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+.area-do-usuario a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.area-do-usuario a:hover {
+    color: var(--cor-destaque);
+}
+
+/* ===== BANNER ===== */
+
+.banner {
+    padding: 100px 0;
+    background-color: var(--cor-fundo);
+}
+
+.banner .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.banner-conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.banner-imagem {
+    flex: 1;
+}
+
+.banner-imagem img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+.banner-conteudo h2 {
+    font-size: 56px;
+    line-height: 1.05;
+    color: var(--cor-principal);
+    font-weight: 600;
+    letter-spacing: -1.5px;
+}
+
+.banner-conteudo h3 {
+    font-size: 24px;
+    color: var(--cor-texto-secundario);
+    font-weight: 400;
+}
+
+.banner-conteudo p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+}
+
+.banner-conteudo a {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--cor-destaque);
+    color: white;
+    text-decoration: none;
+    border-radius: 980px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+    align-self: flex-start;
+}
+
+.banner-conteudo a:hover {
+    /* CORRIGIDO: era #005bb5 hardcoded, sem relação com --cor-destaque.
+       Agora usa a variável derivada — trocar a cor principal no
+       :root propaga pro hover automaticamente. */
+    background-color: var(--cor-destaque-hover);
+    /* REMOVIDO: transform + box-shadow de elevação.
+       Botão pill da Apple não "levanta" no hover, só escurece. */
+}
+
+/* ===== PRODUTOS ===== */
+
+.produtos-destaque {
+    padding: 80px 0;
+    background-color: var(--cor-fundo);
+}
+
+.produtos-destaque h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--cor-principal);
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+}
+
+#lista-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card-produto {
+    width: 280px;
+    background-color: var(--cor-fundo-alt);
+    border-radius: 18px;
+    padding: 24px;
+    /* CORRIGIDO com base nas suas fotos do site da Apple: os cards reais
+       (grade de categorias, "As novidades") não usam sombra pra separar
+       elemento — usam cor de fundo sólida contra a página. Sombra
+       removida, fundo trocado pra --cor-fundo-alt contra a section
+       branca. */
+    transition: background-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-produto:hover {
+    background-color: #EBEBF0;
+}
+
+.produto-imagem {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.produto-nome {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cor-principal);
+    letter-spacing: -0.3px;
+}
+
+.avaliacao-produto {
+    font-size: 16px;
+}
+
+.produto-preco {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cor-principal);
+    /* CORRIGIDO: preço em --cor-destaque (azul) chama mais atenção que
+       o nome do produto — inverte a hierarquia visual. A Apple mostra
+       preço em preto/cinza-escuro, reserva o azul só pra ação (botão/link). */
+}
+
+.produto-parcelamento {
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+    margin-top: -8px;
+}
+
+.produto-descricao {
+    color: var(--cor-texto-secundario);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.produtos-estoque {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.em-estoque {
+    color: #1D7A3C;
+}
+
+.ultimo-estoque {
+    color: #C77700;
+}
+
+.esgotado {
+    color: var(--cor-erro);
+}
+
+.acoes-produto {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-carrinho {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 980px;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-carrinho:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+.btn-favorito {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 980px;
+    background-color: white;
+    color: var(--cor-destaque);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-favorito:hover {
+    background-color: var(--cor-destaque);
+    color: white;
+}
+
+.btn-favorito.ativo {
+    /* CORRIGIDO: era "red" genérico com comentário próprio dizendo que
+       não estava decidido. Usa a variável de erro/destaque negativo,
+       consistente com o resto da paleta. */
+    background-color: var(--cor-erro);
+    border-color: var(--cor-erro);
+    color: white;
+}
+
+/* ===== ORDENAR / CATEGORIA =====
+   Estilizado assumindo <select id="ordenar"> e <select id="categoria">
+   no HTML. Eles ainda NÃO existem no seu HTML atual — isso não resolve
+   o TypeError de ordenar.js sem addEventListener guardado nem o filtro
+   de categoria sem elemento. Isso é aparência, não lógica. */
+
+.controles-lista {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+#ordenar,
+#categoria {
+    padding: 8px 36px 8px 16px;
+    border: 1px solid #D2D2D7;
+    border-radius: 980px;
+    background-color: var(--cor-fundo);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--cor-texto);
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236E6E73'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    transition: border-color 0.2s ease;
+}
+
+#ordenar:hover,
+#categoria:hover {
+    border-color: var(--cor-destaque);
+}
+
+#ordenar:focus,
+#categoria:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA DOS CARDS =====
+   renderizarProdutos() faz innerHTML = "" e recria tudo do zero a cada
+   busca/filtro/ordenação. "animation" (diferente de "transition") roda
+   sozinha assim que o elemento entra no DOM, sem precisar de estado
+   "antes/depois" — por isso funciona aqui e transition não funcionaria. */
+
+@keyframes entrarCard {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-produto,
+.card-favorito,
+.card-carrinho {
+    animation: entrarCard 0.35s ease both;
+}
+
+/* Escalona a entrada por posição, pra não parecer que tudo pisca junto.
+   Cobre até 12 cards; além disso, todos entram no mesmo instante do 12º. */
+#lista-produtos .card-produto:nth-child(1),
+#lista-favoritos .card-favorito:nth-child(1) { animation-delay: 0.03s; }
+#lista-produtos .card-produto:nth-child(2),
+#lista-favoritos .card-favorito:nth-child(2) { animation-delay: 0.06s; }
+#lista-produtos .card-produto:nth-child(3),
+#lista-favoritos .card-favorito:nth-child(3) { animation-delay: 0.09s; }
+#lista-produtos .card-produto:nth-child(4),
+#lista-favoritos .card-favorito:nth-child(4) { animation-delay: 0.12s; }
+#lista-produtos .card-produto:nth-child(n+5),
+#lista-favoritos .card-favorito:nth-child(n+5) { animation-delay: 0.15s; }
+
+/* ===== LISTA DE FAVORITOS =====
+   Não existia estilo nenhum pra .card-favorito em lugar algum — a
+   section renderizava com HTML puro, sem largura, sem grid, sem cor. */
+
+.lista-favoritos {
+    padding: 60px 0;
+}
+
+.lista-favoritos > div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card-favorito {
+    width: 260px;
+    background-color: var(--cor-fundo-alt);
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: background-color 0.25s ease;
+}
+
+.card-favorito:hover {
+    background-color: #EBEBF0;
+}
+
+.favorito-imagem {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.favorito-nome {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--cor-principal);
+}
+
+.favorito-preco {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cor-principal);
+}
+
+.favorito-estoque {
+    font-size: 13px;
+    color: var(--cor-texto-secundario);
+}
+
+.favorito-btn-adicionar {
+    padding: 10px;
+    border: none;
+    border-radius: 980px;
+    background-color: var(--cor-destaque);
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.favorito-btn-adicionar:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+.favorito-btn-remover {
+    padding: 10px;
+    border: 1px solid #D2D2D7;
+    border-radius: 980px;
+    background-color: transparent;
+    color: var(--cor-texto-secundario);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.favorito-btn-remover:hover {
+    border-color: var(--cor-erro);
+    color: var(--cor-erro);
+}
+
+.btn-saiba-mais {
+    /* CORRIGIDO com base nas suas fotos: dentro de card de produto a
+       Apple usa link de texto com seta ("Encontrar uma Apple Store ↗"),
+       não um botão cinza de largura total. Botão preenchido só é usado
+       pra CTA principal (o "Saiba Mais" preto do banner, esse já estava
+       certo). */
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+    padding: 0;
+    border: none;
+    background: none;
+    color: var(--cor-destaque);
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-saiba-mais::after {
+    content: "→";
+    font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+.btn-saiba-mais:hover {
+    color: var(--cor-destaque-hover);
+}
+
+.btn-saiba-mais:hover::after {
+    transform: translateX(3px);
+}
+
+/* ===== MODAL (ESTILO APPLE) =====*/
+
+.modal {
+    display: none;  /* Escondido por padrao*/
+    position: fixed;
+    z-index: 1000; /* Fica por cima de absolutamente tudo*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);  /* Fundo Escuro transparente*/
+    backdrop-filter: blur(8px); /* Efeito de vidro fosco*/
+    align-items: center;
+    justify-content: center;
+}
+
+/* A caixa Branca centralizada onde ficam os detalhes do produto*/
+.modal-conteudo {
+    background-color: var(--cor-fundo);
+    padding: 40px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* O botao de fechar (X) no canto superior direito*/
+.fechar-modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--cor-texto-secundario);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.fechar-modal:hover {
+    color: var(--cor-principal);
+}
+
+/* Layout interno dos detalhes do produto dentro do modal*/
+.modal-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.modal-detalhes img {
+    max-width: 250px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.modal-detalhes h2 {
+    font-size: 28px;
+    color: var(--cor-principal);
+    letter-spacing: -0.5px;
+}
+
+.modal-detalhes p {
+
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+}
+
+.modal-preco {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--cor-principal);
+}
+
+/*==== TELA DE AUTENTICAÇAO (ESTILO APPLE)====*/
+/*Centraliza a caixa de login/cadastro na tela inteira*/
+.container-autenticacao {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /*Ocupa a tela toda descontando o topo*/
+    padding: 40px 20px;
+}
+
+/*A estrutura cinza/Branca que segura os dois blocos lado a lado*/
+.caixa-autenticacao {
+    display: flex;
+    background-color: var(--cor-fundo);
+    border-radius: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0, 0.05); /*Sombra bem suave e leve*/
+    width: 100%;
+    max-width: 900px;
+    padding: 50px;
+    gap: 50px;
+}
+
+/* Cada metade de caixa (uma pro login, uma pro cadastro) */
+.bloco-form {
+    flex: 1; /*Faz duas metades terem exatamente o mesmo tamanho*/
+    display: flex;
+    flex-direction: column;
+}
+
+.bloco-form h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--cor-principal);
+    letter-spacing: -0.5px; /*Deixa as letras ligeiramente mais juntas, estilo Apple*/
+    margin-bottom: 6px;
+}
+
+.subtitulo-auth {
+    font-size: 14px;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 30px;
+}
+
+/*Agrupado do label + Input*/
+.campo-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.campo-input label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--cor-principal);
+    margin-bottom: 8px;
+}
+
+/*O design dos campos onde o usuario digita*/
+.campo-input input {
+    padding: 14px 16px;
+    border: 1px solid #d2d2d7; /*Borda cinza clara sutil*/
+    border-radius: 12px; /* cantos arrendodados mordenos*/
+    font-size: 15px;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    color: var(--cor-principal);
+}
+
+/*Efeito ao clicar dentro do campo de digitaçao*/
+.campo-input input:focus {
+    outline: none;
+    border-color: #0071e3; /*O azul classico de foco que a Apple usa*/
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15); /*Sombra azulada suave em voltar*/
+}
+
+/*Botoes Modernos*/
+.btn-auth {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #0071e3; /*Botao principal azul*/
+    color: #fff;
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+}
+.btn-auth:hover {
+    background-color: #0077ed; /*brilho sutil no hover*/
+}
+/*Botao secundario (usado no cadastro para dar contraste)*/
+.btn-secundario {
+    background-color: #f5f5f7; /*Cinza bem clarinho*/
+    color: #1d1d1f;
+}
+
+.btn-secundario:hover {
+    background-color: #e8e8ed;
+}
+/*A linha vertical sutil que separa o Login do cadastro*/
+.divisor-auth {
+    width: 1px;
+    background-color: #d2d2d7;
+    opacity: 0.5;
+}
+
+.card-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--cor-fundo-alt);
+    border-radius: 18px;
+    margin-bottom: 16px;
+}
+
+.carrinho-imagem {width: 80px; height: 80px; object-fit: contain;}

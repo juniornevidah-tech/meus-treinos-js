@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(119, 67, 179);
+}
+h1 {
+    color: rgb(224, 226, 101);
+}
+h2 {
+    color: rgba(7, 255, 255, 0.863);
+}
+.produtos {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 40px;
+}
+.produtos  {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 40px;
+}
+.produtos {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 40px;
+}
+.produtos {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 40px;
+}
+#produtos0 {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+.carrinho1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: aliceblue;
+    width: 300px;
+    padding: 15px;
+    border-radius: 40px;
+}
+button {
+    padding: 15px 30px;
+}
+.escondido {
+    display: none;
+}
+.botao1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+}
+input {
+    width: 300px;
+    height: 45px;
+    padding: 10px;
+    font-size: 16px;
+}
+.Buscar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+.Buscar input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.Buscar button {
+    padding: 12px 30px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.cartegoria {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 20px;
+    float: left;
+    width: 200px;
+    flex-direction: column;
+    gap: 10px;
+    bottom: 20px;
+    right: 20px;
+    text-align: right;
+
+}

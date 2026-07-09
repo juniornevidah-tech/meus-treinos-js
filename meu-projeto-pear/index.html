@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+</head>
+<body>
+    <!--header-->
+    <header>
+        <div class="container">
+            <!--Logo-->
+            <h1>
+                <a href="index.html">Pear</a>
+            </h1>
+            <!--Navegar pela funçoes-->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                </ul>
+            </nav>
+            <!--Form aonde ficar input e botao de pesquisar-->
+            <form class="pesquisar">
+                <label for="produto">Produto</label>
+                <input type="text" id="produto">
+                <button type="submit">Buscar</button>
+            </form>
+            <!--Area Do Usuario-->
+            <div class="area-do-usuario">
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="favoritos.html">Favoritos(<span id="contador-favoritos">0</span>)</a></li>
+                    <li><a href="carrinho.html">🛒(<span id="contador-carrinho">0</span>)</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!--main-->
+    <main>
+        <section class="banner">
+            <div class="container">
+                <div class="banner-conteudo">
+                    <h2>O Futuro Começa Aqui.</h2>
+                    <h3>Tecnologia Que Impressiona</h3>
+                    <p>Descubra Os Smartphones E Consoles Mais Modernos Do Mercado, Com Qualidade, Desempenho E Design Premium.</p>
+                    <a href="produtos.html">Saiba Mais</a>
+                </div>
+                <div class="banner-imagem">
+                    <img src="fotos/file_000000002314720e9779ee0d73b8e854 (1).png" alt="Imagem de um iphone em destaque no banner da loja Pear">
+                </div>
+            </div>
+        </section>
+        <section class="produtos-destaque">
+            <div class="secao-conteudo">
+                <h2>Produtos em Destaque</h2>
+
+                <div id="lista-produtos"></div>
+            </div>
+        </section>
+    </main>
+    <!--footer-->
+    <footer>
+
+    </footer>
+    <script type="module" src="JS/modules/produtos.js"></script>
+    <script type="module" src="JS/modules/favoritos.js"></script>
+    <script type="module" src="JS/modules/carrinho.js"></script>
+    <script type="module" src="JS/modules/login.js"></script>
+    <script type="module" src="JS/modules/listagem.js"></script>
+
+<div id="modal-saiba-mais" class="modal">
+    <div class="modal-conteudo">
+        <span class="fechar-modal">&times;</span>
+
+        <div id="modal-detalhes-produto">
+        </div>
+    </div>
+</div>
+</body>
+</html>

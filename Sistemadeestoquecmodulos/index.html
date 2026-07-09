@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema De Estoque Com Modulos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="informacoes">
+        <h1>Sistema De Estoque Com Modulos</h1>
+        <h2>Aqui voce cria Seus estoque</h2>
+        Nome: <input type="text" id="NomeDoProduto">
+        Preço: <input type="number" id="Preco">
+        <select id="Quantidade">
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="1">3</option>
+            <option value="1">4</option>
+            <option value="1">5</option>
+            <option value="1">6</option>
+            <option value="1">7</option>
+            <option value="1">8</option>
+            <option value="1">9</option>
+            <option value="1">10</option>
+            <option value="1">11</option>
+            <option value="1">12</option>
+            <option value="1">13</option>
+            <option value="1">14</option>
+        </select>
+         <select id="Categoria1">
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Informática">Informática</option>
+            <option value="Celulares">Celulares</option>
+            <option value="Periféricos">Periféricos</option>
+            <option value="Livros">Livros</option>
+            <option value="Roupas">Roupas</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Higiene">Higiene</option>
+            <option value="Limpeza">Limpeza</option>
+            <option value="Papelaria">Papelaria</option>
+            <option value="Outros">Outros</option>
+        </select>
+            <button onclick="adicionarProdutos()">Adicionar Produtos</button>
+    </div>
+    <div id="Pesquisa2">
+        <input type="text" id="Buscar">
+        <button onclick="Pesquisa()">Pesquisa</button>
+    </div>
+
+    <div id="AreaDeExibiçao">
+       <ul id="ListaDeProdutos">
+
+       </ul>
+    </div>
+
+    <div id="ResultadoDosProdutos">
+        <p id="TotalDeProdutos"></p>
+        <p id="ValorTotalDeEstoque"></p>
+    </div>
+</body>
+<script src="projeto.js"></script>
+</html>

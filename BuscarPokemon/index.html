@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Pokemom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Informaçoes">
+        <h1>Buscar Pokemon</h1>
+        <input type="text" id="pokemon" placeholder="Digite pokemon">
+        <button id="Buscar">Buscar🔎</button>
+        <button id="Aleatorio">Aleatorio</button>
+        <button onclick="Proximo()">Proximo➡️</button>
+        <button onclick="Anterior()">Anterior⬅️</button>
+        <button onclick="AdicionarFavorito()">Favorito❤️</button>
+        <button onclick="atualizarFavoritos()">Atualizar Favoritos</button>
+    </div>
+    <div class="resultado">
+        <p id="imagem"></p>
+        <p id="nome"></p>
+        <p id="id"></p>
+        <p id="Tipo(s)"></p>
+        <p id="Altura"></p>
+        <p id="Peso"></p>
+        <p id="Habilidades"></p>
+    <div class="favoritos">
+        <ul id="Favoritos">
+
+        </ul>
+    </div>
+    </div>
+</body>
+<script src="BuscarPokemon.js"></script>
+</html>

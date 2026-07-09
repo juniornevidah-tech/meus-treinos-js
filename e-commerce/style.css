@@ -1,0 +1,273 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* HEADER */
+
+header{
+    background: linear-gradient(135deg,#0071ce,#004c91);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+#Logo h1{
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* PESQUISA */
+
+#Pesquisa{
+    display: flex;
+    gap: 10px;
+}
+
+#Buscar21{
+    width: 300px;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+#Pesquisa button{
+    border: none;
+    background: #ffc220;
+    color: #222;
+    padding: 12px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+#Pesquisa button:hover{
+    transform: scale(1.05);
+    background: #ffb300;
+}
+
+/* NAV */
+
+nav{
+    display: flex;
+    gap: 20px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover{
+    color: #ffc220;
+}
+
+/* BANNER */
+
+#banner{
+    height: 400px;
+    background:
+    linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+}
+
+#banner h1{
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+#banner p{
+    font-size: 1.3rem;
+}
+
+/* FILTROS */
+
+#filtro,
+#Ordenar{
+    margin: 20px auto;
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    width: 250px;
+    font-size: 1rem;
+}
+
+/* PRODUTOS */
+
+#produtos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 30px;
+    padding: 40px 5%;
+}
+
+.produto{
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+    transition: .4s;
+    overflow: hidden;
+}
+
+.produto:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.produto img{
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    margin: 15px 0;
+    transition: .4s;
+}
+
+.produto:hover img{
+    transform: scale(1.08);
+}
+
+.produto h1{
+    color: #004c91;
+    margin-bottom: 10px;
+}
+
+.produto h2{
+    font-size: .95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.produto h3:nth-of-type(1){
+    color: #00a650;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* BOTÕES */
+
+.produto button{
+    border: none;
+    padding: 12px 18px;
+    margin: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.produto button:first-of-type{
+    background: #0071ce;
+    color: white;
+}
+
+.produto button:first-of-type:hover{
+    background: #004c91;
+}
+
+.produto button:last-of-type{
+    background: #ffc220;
+}
+
+.produto button:last-of-type:hover{
+    background: #ffb300;
+}
+
+/* CARRINHO E FAVORITOS */
+
+#carrinho,
+#favorites{
+    margin: 50px auto;
+    width: 90%;
+    max-width: 900px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+#carrinho h1,
+#favorites h1{
+    color: #004c91;
+    margin-bottom: 20px;
+}
+
+#lista li,
+#adicioanafavoritos li{
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* FOOTER */
+
+footer{
+    background: #004c91;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+    header{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #Buscar21{
+        width: 220px;
+    }
+
+    nav{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #banner h1{
+        font-size: 2.5rem;
+    }
+
+    .produto img{
+        width: 180px;
+        height: 180px;
+    }
+}

@@ -1,0 +1,10 @@
+:root {
+    --cor-principal: #1D1D1F;        /* era #000000 puro — preto absoluto não é o que a Apple usa em texto/título */
+    --cor-fundo: #FFFFFF;
+    --cor-fundo-alt: #F5F5F7;        /* nova — cinza-claro pra alternar seção sem linha divisória, como a Apple faz */
+    --cor-texto: #1D1D1F;
+    --cor-texto-secundario: #6E6E73; /* nova — substitui os #555 e #666 soltos espalhados pelo style.css */
+    --cor-destaque: #0071E3;
+    --cor-destaque-hover: #0077ED;   /* nova — substitui o #005bb5 hardcoded, que não tinha relação matemática com --cor-destaque */
+    --cor-erro: #E00000;             /* nova — pro coração de favorito ativo, no lugar do "red" genérico */
+}

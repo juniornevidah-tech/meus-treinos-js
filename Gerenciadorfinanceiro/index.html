@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador Financeiro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Entrada1">
+        <div class="Entrainput">
+            <h1>Meu Financeiro</h1>
+            <h2>"Olá a todos! Quem aqui já se pegou perguntando 'para onde foi todo o meu dinheiro?' no fim do mês? O grande problema hoje não é a falta de ganhos, mas a falta de visibilidade. A maioria das pessoas e pequenas empresas ainda confia em planilhas complexas ou anotações em papel que dão muito trabalho e não oferecem respostas rápidas."</h2>
+            <hr>
+            <div class="input">
+            Descriçao:<input type="text" id="Descriçao" placeholder="Digite">
+            Valor:<input type="number" id="Transaçao" placeholder="Digite">
+            <select name="entrada" id="despesa">
+                <option value="entrada">entrada</option>
+                <option value="despesa">despesa</option>
+            </select>
+            <select name="categoria" id="categoria">
+                <option value="comida">comida🥪</option>
+                <option value="transporte">transporte🚅</option>
+                <option value="lazer">lazer💪</option>
+                <option value="trabalho">trabalho🧰</option>
+                <option value="contas">contas📄</option>
+            </select>
+            <button onclick="removerTransacoes()">Remove</button>
+            <button onclick="continuar()">Financiar</button>
+        </div>
+        </div>
+    </div>
+    <div class="lista">
+        <ul id="lista1">
+
+        </ul>
+        <h2 id="valor"></h2>
+    </div>
+
+    <div class="DASHBOARD">
+        <h3 id="tra">0</h3>
+        <h3 id="tds">0</h3>
+        <h3 id="slf">0</h3>
+    </div>
+</body>
+<script src="gerenciador.js"></script>
+</html>

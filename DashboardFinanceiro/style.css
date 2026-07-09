@@ -1,0 +1,316 @@
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,#00ffcc33,transparent 40%),
+    radial-gradient(circle at bottom right,#00aaff33,transparent 40%),
+    linear-gradient(135deg,#050816,#0f172a,#020617);
+    color:white;
+    overflow-x:hidden;
+    padding:30px;
+    animation:fundoAnimado 15s infinite alternate;
+}
+
+@keyframes fundoAnimado{
+    from{
+        background-position:left;
+    }
+    to{
+        background-position:right;
+    }
+}
+
+/* ==========================
+   TITULO
+========================== */
+
+#Informaçoes{
+    max-width:1200px;
+    margin:auto;
+    padding:35px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+    0 0 30px rgba(0,255,255,.15),
+    0 0 80px rgba(0,255,255,.05);
+
+    animation:subir 1s ease;
+}
+
+@keyframes subir{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h1{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:10px;
+
+    background:linear-gradient(90deg,#00ffff,#00ff88);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:brilho 3s infinite;
+}
+
+@keyframes brilho{
+    50%{
+        filter:drop-shadow(0 0 20px cyan);
+    }
+}
+
+h2{
+    text-align:center;
+    color:#94a3b8;
+    margin-bottom:25px;
+}
+
+/* ==========================
+   INPUTS
+========================== */
+
+input,
+select{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:15px;
+
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.07);
+
+    color:white;
+    font-size:1rem;
+
+    transition:.4s;
+}
+
+input:focus,
+select:focus{
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #00ffff50;
+}
+
+/* ==========================
+   BOTAO
+========================== */
+
+button{
+    width:100%;
+    padding:18px;
+
+    border:none;
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00ff88,
+    #00ffff
+    );
+
+    color:#001219;
+    font-size:1rem;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+button:hover{
+    transform:
+    translateY(-5px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 20px #00ff88,
+    0 0 50px #00ff88;
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+#DashBoard23{
+    max-width:1200px;
+    margin:30px auto;
+
+    background:rgba(255,255,255,.04);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+#resultado{
+    list-style:none;
+}
+
+#resultado li{
+    margin-bottom:15px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+    135deg,
+    rgba(0,255,255,.08),
+    rgba(255,255,255,.03)
+    );
+
+    border-left:5px solid #00ffff;
+
+    transition:.4s;
+
+    animation:entrada .5s ease;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+#resultado li:hover{
+    transform:translateX(10px);
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.3);
+}
+
+/* ==========================
+   CARDS RESUMO
+========================== */
+
+#resumo{
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+#resumo p{
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    font-size:1.3rem;
+    font-weight:700;
+
+    backdrop-filter:blur(15px);
+
+    transition:.4s;
+
+    animation:flutuar 3s infinite ease-in-out;
+}
+
+@keyframes flutuar{
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+#Receitas{
+    background:rgba(0,255,136,.12);
+
+    border:1px solid rgba(0,255,136,.3);
+
+    color:#00ff88;
+
+    box-shadow:
+    0 0 20px rgba(0,255,136,.2);
+}
+
+#Despesas{
+    background:rgba(255,60,60,.12);
+
+    border:1px solid rgba(255,60,60,.3);
+
+    color:#ff5252;
+
+    box-shadow:
+    0 0 20px rgba(255,60,60,.2);
+}
+
+#Saldo{
+    background:rgba(0,255,255,.12);
+
+    border:1px solid rgba(0,255,255,.3);
+
+    color:#00ffff;
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.2);
+}
+
+#Receitas:hover,
+#Despesas:hover,
+#Saldo:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 40px currentColor;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00ffff;
+    border-radius:50px;
+}

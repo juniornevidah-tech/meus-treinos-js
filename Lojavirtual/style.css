@@ -1,0 +1,41 @@
+.produto1 {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.produto2 {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.produto3 {
+    width: 300px;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.todos {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+body {
+    background-color: rgb(82, 198, 202);
+}
+.escondido {
+    display: none;
+}
+#botao {
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    position: fixed;
+    width: 200px;
+    height: 60px;
+    font-size: 18px;
+}

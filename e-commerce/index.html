@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <!--Logo-->
+    <div id="Logo">
+        <h1>Walmart</h1>
+    </div>
+    <!--Pesquisa-->
+    <div id="Pesquisa">
+        <input type="text" id="Buscar21" placeholder="Pesquise algo">
+        <button onclick="buscaProdutos()">
+                Pesquisa
+        </button>
+    </div>
+    <!--Navegaçao-->
+    <nav>
+        <a href="#banner">Inicio</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#carrinho">Carrinho</a>
+        <a href="#favorites">Favoritos</a>
+    </nav>
+    </header>
+
+    <main>
+        <section id="banner">
+            <h1>Bem-Vindo a Loja</h1>
+            <p>As melhores ofertas</p>
+        </section>
+
+        <section id="filtro">
+
+            <select id="categoria">
+                <option value="Higiene">Higiene</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Frutas">Frutas</option>
+                <option value="Beleza">Beleza</option>
+                <option value="Plastico">Plastico</option>
+                <option value="Todos">Todos</option>
+            </select>
+
+        </section>
+
+        <select id="Ordenar">
+            <option value="menor">Menor Valor</option>
+            <option value="Maior">Maior valor</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+        </select>
+
+        <section id="produtos">
+            <div class="produto" data-categoria="Higiene">
+                <h1>Shampoo</h1>
+                <img src="fotosparaproduto/foto-shampoo-png.png" alt="fotodeshampoo">
+                <h2>Descriçao: O shampoo é um produto cosmético cuja principal função é a limpeza profunda do couro cabeludo e dos fios, removendo resíduos, oleosidade e células mortas. Ele prepara o cabelo para receber tratamentos, como condicionadores e máscaras, e a sua escolha deve ser feita com base nas necessidades da pele da cabeça.</h2>
+                <h3>R$ 30</h3>
+
+                <h3>Higiene</h3>
+                <button onclick="adicionarCarrinho(1)">Comprar</button>
+                <button onclick="favoritos(0)">Favorito</button>
+            </div>
+            <div class="produto" data-categoria="Bebidas">
+                <h1>Cerveja</h1>
+                <img src="fotosparaproduto/foto-cerveja-.png" alt="foto-De-Cerveja">
+                <h2>A cerveja é uma das bebidas alcoólicas mais consumidas no mundo, feita a partir da fermentação de cereais (principalmente a cevada maltada) com água. É uma bebida carbonatada composta fundamentalmente por água, malte, lúpulo e levedura, apresentando grande variedade de aromas, cores e sabores.</h2>
+                <h3>R$ 50</h3>
+                <h3>Bebidas</h3>
+                <button onclick="adicionarCarrinho(2)">Comprar</button>
+                <button onclick="favoritos(1)">Favorito</button>
+            </div>
+            <div class="produto" data-categoria="Frutas">
+                <h1>Frutas</h1>
+                <img src="fotosparaproduto/foto-frutas-.png" alt="Frutas">
+                <h2>O abacaxi é uma fruta tropical originária da América do Sul, cultivada pela planta Ananas comosus. Ele é uma infrutescência (um conjunto de pequenas frutas unidas ao redor de um eixo), amplamente reconhecido por sua coroa de folhas, polpa amarela, suculenta e seu sabor agridoce característico.</h2>
+                <h3>R$ 10</h3>
+                <h3>Frutas</h3>
+                <button onclick="adicionarCarrinho(3)">Comprar</button>
+                <button onclick="favoritos(2)">Favoritos</button>
+            </div>
+            <div class="produto" data-categoria="Beleza">
+                <h1>Maquiagem</h1>
+                <img src="fotosparaproduto/foto-maquiagem-.png" alt="Foto-De-Maquiagem">
+                <h2>A maquiagem consiste na aplicação de produtos cosméticos com a finalidade de embelezar, disfarçar imperfeições e realçar os traços naturais. Mais do que uma técnica de beleza, funciona como uma forma de linguagem visual, autocuidado e expressão de identidade e personalidade.</h2>
+                <h3>R$ 100</h3>
+                <h3>Beleza</h3>
+                <button onclick="adicionarCarrinho(4)">Comprar</button>
+                <button onclick="favoritos(3)">favorito</button>
+            </div>
+            <div class="produto" data-categoria="Bebidas">
+                <h1>Suco</h1>
+                <img src="fotosparaproduto/foto-suco-.png" alt="Foto-Do-Suco">
+                <h2>O suco é uma bebida não fermentada obtida a partir da extração do líquido de frutas maduras ou outras partes vegetais. Ele é uma excelente fonte de vitaminas, minerais e antioxidantes, ajudando na hidratação e no bom funcionamento do organismo.</h2>
+                <h3>R$ 15</h3>
+                <h3>Bebidas</h3>
+                <button onclick="adicionarCarrinho(5)">Comprar</button>
+                <button onclick="favoritos(4)">Favorito</button>
+            </div>
+            <div class="produto" data-categoria="Plastico">
+                <h1>Recipientes</h1>
+                <img src="fotosparaproduto/foto-recepientes-.png" alt="Foto-De-Recipientes">
+                <h2>Um recipiente é qualquer invólucro ou reservatório projetado para armazenar, embalar ou transportar substâncias. Ele possui uma cavidade interna que protege seu conteúdo e pode ser fabricado em diversos materiais (como vidro, plástico ou metal), adaptando-se para uso em cozinhas, comércios ou indústrias.</h2>
+                <h3> R$ 50</h3>
+                <h3>Plastico</h3>
+                <button onclick="adicionarCarrinho(6)">Comprar</button>
+                <button onclick="favoritos(5)">Favorito</button>
+            </div>
+        </section>
+
+        <section id="carrinho">
+            <h1>Carrinho</h1>
+            <ul id="lista">
+
+            </ul>
+            <h2 id="Total">Valor Total Dos Produtos: R$</h2>
+        </section>
+
+        <section id="favorites">
+            <h1>Favorito</h1>
+            <ul id="adicioanafavoritos">
+
+            </ul>
+        </section>
+
+        <section id="listaproduto0">
+            <ul id="listaproduto">
+                
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Todos direitos resevados</p>
+    </footer>
+</body>
+<script src="Projeto.js"></script>
+</html>

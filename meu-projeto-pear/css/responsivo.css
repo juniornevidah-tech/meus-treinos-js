@@ -1,0 +1,60 @@
+/* Estava vazio. Sem isso, .container do header (flex row fixo com
+   logo + nav + busca + área do usuário) não quebra em telas estreitas —
+   os elementos se espremem ou vazam da tela, não é hipótese, é o que
+   acontece com flex sem wrap num viewport de celular. */
+
+@media (max-width: 900px) {
+    .container {
+        flex-wrap: wrap;
+        row-gap: 16px;
+    }
+
+    nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .pesquisar {
+        order: 3;
+        width: 100%;
+    }
+
+    .pesquisar input {
+        flex: 1;
+    }
+
+    .banner .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .banner-conteudo {
+        align-items: center;
+    }
+
+    .banner-conteudo a {
+        align-self: center;
+    }
+
+    .banner-conteudo h2 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .area-do-usuario ul {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #lista-produtos {
+        justify-content: center;
+    }
+
+    .card-produto {
+        width: 100%;
+        max-width: 320px;
+    }
+}
