@@ -47,3 +47,5 @@ async function processarPagamentos() {
 
 // 2. Chame a funçao no final do arquivo
 processarPagamentos();
+
+// Testando branches no Git
