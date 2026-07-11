@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Busca Cep Api</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Endereço de Entrega</h2>
+    </div>
+    <form id="formulario-cep">
+        <div class="campo-grupo">
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" placeholder="Ex: 01001000" maxlength="8" required>
+            <button type="submit">Buscar Cep</button>
+        </div>
+
+        <div class="campo">
+            <label for="logradouro">Rua/Logradouro</label>
+            <input type="text" id="logradouro" disabled>
+        </div>
+
+        <div class="campo">
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" disabled>
+        </div>
+
+        <div class="campo">
+            <label for="cidade">Cidade</label>
+            <input type="text" id="cidade" disabled>
+        </div>
+
+        <div class="estado">
+            <label for="estado">Estado</label>
+            <input type="text" id="estado" disabled>
+        </div>
+
+        <div class="campo">
+            <label for="numero">Numero</label>
+            <input type="text" id="numero" placeholder="Digite o numero da casa">
+        </div>
+    </form>
+
+    <div id="resultado">
+        <!-- O endereço vai aprecer aqui dentro pelo JS-->
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

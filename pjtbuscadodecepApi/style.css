@@ -1,0 +1,118 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   2. CARD CONTAINER
+   ========================================================================== */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. ESTILIZAÇÃO DO FORMULÁRIO E CAMPOS
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-grupo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+/* Estilo único para os labels */
+label {
+    font-size: 14px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Estilo padrão para todos os inputs */
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #dcdde1;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #2c3e50;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Efeito visual quando o usuário clica no campo */
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+/* Estilização para os campos bloqueados (preenchidos pela API) */
+input:disabled {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    border-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* ==========================================================================
+   4. BOTÃO DE BUSCA
+   ========================================================================== */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    height: 46px; /* Alinha perfeitamente com a altura do input */
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
